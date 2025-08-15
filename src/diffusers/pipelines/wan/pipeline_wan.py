@@ -139,6 +139,7 @@ class WanPipeline(DiffusionPipeline, WanLoraLoaderMixin):
         expand_timesteps: bool = False,  # Wan2.2 ti2v
     ):
         super().__init__()
+        print("init the WAN PIPELINE CLASS  BY INNOKRIA AND SEE THIS IN SPACES======================================")
 
         self.register_modules(
             vae=vae,
