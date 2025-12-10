@@ -148,6 +148,7 @@ class ZImagePipeline(DiffusionPipeline, ZImageLoraLoaderMixin, FromSingleFileMix
         transformer: ZImageTransformer2DModel,
     ):
         super().__init__()
+        print("rahul- __init__ called")
 
         self.register_modules(
             vae=vae,
