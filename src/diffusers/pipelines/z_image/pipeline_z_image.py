@@ -148,7 +148,6 @@ class ZImagePipeline(DiffusionPipeline, ZImageLoraLoaderMixin, FromSingleFileMix
         transformer: ZImageTransformer2DModel,
     ):
         super().__init__()
-        print("rahul- __init__ called")
 
         self.register_modules(
             vae=vae,
@@ -316,7 +315,7 @@ class ZImagePipeline(DiffusionPipeline, ZImageLoraLoaderMixin, FromSingleFileMix
         callback_on_step_end_tensor_inputs: List[str] = ["latents"],
         max_sequence_length: int = 512,
     ):
-        """
+        r"""
         Function invoked when calling the pipeline for generation.
 
         Args:
