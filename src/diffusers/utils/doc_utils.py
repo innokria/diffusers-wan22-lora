@@ -14,19 +14,13 @@
 """
 Doc utilities: Utilities related to documentation
 """
-
-import re
-
-
 import re
 
 def replace_example_docstring(example_docstring):
     def docstring_decorator(fn):
-        print("rahul util loaded")
         func_doc = fn.__doc__
-        if not func_doc:
-            # suppress if docstring is None
-            fn.__doc__ = ""
+        if func_doc is None:
+            # Suppress error if docstring is None
             return fn
 
         lines = func_doc.split("\n")
@@ -35,14 +29,13 @@ def replace_example_docstring(example_docstring):
             i += 1
 
         if i < len(lines):
-            lines[i] = example_docstring
+            lines[i] = example_doc_string
             fn.__doc__ = "\n".join(lines)
-        else:
-            # suppress error and do nothing
-            fn.__doc__ = func_doc
+        # else: do nothing, leave docstring unchanged
 
         return fn
 
     return docstring_decorator
+
 
 
